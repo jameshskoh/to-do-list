@@ -8,7 +8,7 @@ A REST-based to do list server that uses OAuth2 for authentication.
 
 ### Functional Requirements
 
-* [ ] Support user sign-in via OAuth2, possible third party: Gmail, Facebook, GitHub
+* [x] Support user sign-in via OAuth2, possible third party: Gmail, Facebook, GitHub
 * [ ] Support adding a to-do
 * [ ] Support deleting a to-do
 * [ ] Support listing all to-do
@@ -30,7 +30,7 @@ A REST-based to do list server that uses OAuth2 for authentication.
 
 ### To Do
 
-* [ ] Enable OAuth2 sign-in
+* [x] Enable OAuth2 sign-in
 * [ ] Set up a database container
 * [ ] Set up a volume for database files
 * [ ] Write and test database instance and table creation script
