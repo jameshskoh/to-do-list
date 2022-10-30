@@ -1,23 +1,23 @@
 package com.jameshskoh.ToDoList.repository;
 
 import com.jameshskoh.ToDoList.model.BooleanModel;
-import com.jameshskoh.ToDoList.model.ToDoListModel;
+import com.jameshskoh.ToDoList.model.ToDoModel;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
 @Repository
-public class ToDoListRepository {
+public class ToDoRepository {
 
-    public ToDoListRepository() {
+    public ToDoRepository() {
 
     }
 
-    public List<ToDoListModel> listAll() {
+    public List<ToDoModel> listAll() {
         return null;
     }
 
-    public ToDoListModel add(ToDoListModel toDoListModel) {
+    public ToDoModel add(ToDoModel toDoModel) {
         return null;
     }
 
@@ -25,7 +25,7 @@ public class ToDoListRepository {
 
     }
 
-    public ToDoListModel setDone(String id, BooleanModel bool) {
+    public ToDoModel setDone(String id, BooleanModel bool) {
         return null;
     }
 
