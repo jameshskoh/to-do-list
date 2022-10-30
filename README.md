@@ -15,7 +15,7 @@ A REST-based to do list server that uses OAuth2 for authentication.
 * [ ] Support marking a to-do as done/undone
 * [ ] Containerize the system in Docker
 * [ ] Support starting the image via Docker Compose: `docker compose up`
-* [ ] Support access to to-do list via `http://host:port/api_path/params`
+* [x] Support access to to-do list via `http://host:port/api_path/params`
 * [ ] Support authorization via JWT `curl -H "Authorization: Bearer {JWT token} http://host:port/api_path/params"`
 
 
@@ -31,12 +31,15 @@ A REST-based to do list server that uses OAuth2 for authentication.
 ### To Do
 
 * [x] Enable OAuth2 sign-in
-* [ ] Set up a database container
-* [ ] Set up a volume for database files
-* [ ] Write and test database instance and table creation script
-* [ ] Make sure secrets are in external files
-* [ ] Implement repositories
-* [ ] Implement Hibernate entities
-* [ ] Implement REST endpoints
-* [ ] Final testing
+* [x] Set up a database container
+* [x] Set up a volume for database files
+* [x] Write and test database instance and table creation script
+* [x] Make sure secrets are in external files
+* [x] Implement repositories
+* [x] Implement Hibernate entities
+* [x] Implement REST endpoints
+* [ ] Add JWT support
+* [ ] Testing
+* [ ] Write and test DOCKERFILE
+* [ ] Write and test Docker Compose
 
