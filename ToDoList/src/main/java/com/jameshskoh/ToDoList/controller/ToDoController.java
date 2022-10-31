@@ -1,6 +1,6 @@
 package com.jameshskoh.ToDoList.controller;
 
-import com.jameshskoh.ToDoList.model.BooleanModel;
+import com.jameshskoh.ToDoList.model.DoneModel;
 import com.jameshskoh.ToDoList.model.ToDoLabelModel;
 import com.jameshskoh.ToDoList.model.ToDoModel;
 import com.jameshskoh.ToDoList.repository.ToDoRepository;
@@ -44,7 +44,7 @@ public class ToDoController {
 
     // PUT http://localhost:8080/todo/{id}
     @PutMapping("/{id}")
-    public ToDoModel setDone(OAuth2AuthenticationToken token, @PathVariable String id, @RequestBody BooleanModel bool) {
+    public ToDoModel setDone(OAuth2AuthenticationToken token, @PathVariable String id, @RequestBody DoneModel bool) {
         String userId = token.getPrincipal().getName();
         return repository.setDone(userId, id, bool);
     }

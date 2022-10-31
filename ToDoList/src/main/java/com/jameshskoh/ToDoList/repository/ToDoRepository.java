@@ -1,6 +1,6 @@
 package com.jameshskoh.ToDoList.repository;
 
-import com.jameshskoh.ToDoList.model.BooleanModel;
+import com.jameshskoh.ToDoList.model.DoneModel;
 import com.jameshskoh.ToDoList.model.ToDoLabelModel;
 import com.jameshskoh.ToDoList.model.ToDoModel;
 import com.jameshskoh.ToDoList.entity.ToDo;
@@ -14,6 +14,7 @@ import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.UUID;
 
 @Repository
 public class ToDoRepository {
@@ -46,8 +47,22 @@ public class ToDoRepository {
     }
 
     public ToDoModel add(String userId, ToDoLabelModel toDoLabelModel) {
-        Session session = factory.getCurrentSession();
         ToDo toDo = new ToDo(userId, toDoLabelModel);
+
+        UUID uuid = UUID.randomUUID();
+
+        while (true) {
+            Session querySession = factory.getCurrentSession();
+            querySession.beginTransaction();
+            ToDo obj = (ToDo) querySession.get(ToDo.class, uuid.toString());
+            querySession.getTransaction().commit();
+            if (obj == null) break;
+            uuid = UUID.randomUUID();
+        }
+
+        toDo.setId(uuid.toString());
+
+        Session session = factory.getCurrentSession();
         session.beginTransaction();
         session.save(toDo);
         session.getTransaction().commit();
@@ -69,7 +84,7 @@ public class ToDoRepository {
         session.getTransaction().commit();
     }
 
-    public ToDoModel setDone(String userId, String id, BooleanModel bool) {
+    public ToDoModel setDone(String userId, String id, DoneModel bool) {
         Session session = factory.getCurrentSession();
         session.beginTransaction();
         ToDo toDo = session.get(ToDo.class, id);
@@ -77,7 +92,7 @@ public class ToDoRepository {
         if (toDo == null) return null;
 
         if (toDo.getUserId().equals(userId)) {
-            toDo.setDone(bool.value());
+            toDo.setDone(bool.done());
         }
 
         session.getTransaction().commit();

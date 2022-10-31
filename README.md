@@ -9,10 +9,10 @@ A REST-based to do list server that uses OAuth2 for authentication.
 ### Functional Requirements
 
 * [x] Support user sign-in via OAuth2, possible third party: Gmail, Facebook, GitHub
-* [ ] Support adding a to-do
-* [ ] Support deleting a to-do
-* [ ] Support listing all to-do
-* [ ] Support marking a to-do as done/undone
+* [x] Support adding a to-do
+* [x] Support deleting a to-do
+* [x] Support listing all to-do
+* [x] Support marking a to-do as done/undone
 * [ ] Containerize the system in Docker
 * [ ] Support starting the image via Docker Compose: `docker compose up`
 * [x] Support access to to-do list via `http://host:port/api_path/params`
@@ -28,7 +28,7 @@ A REST-based to do list server that uses OAuth2 for authentication.
 
 
 
-### To Do
+## To Do
 
 * [x] Enable OAuth2 sign-in
 * [x] Set up a database container
@@ -42,4 +42,8 @@ A REST-based to do list server that uses OAuth2 for authentication.
 * [ ] Testing
 * [ ] Write and test DOCKERFILE
 * [ ] Write and test Docker Compose
+
+
+
+## Documentations
 
