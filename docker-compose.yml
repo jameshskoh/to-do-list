@@ -1,0 +1,25 @@
+version: '3'
+services:
+  todolist-mysql:
+    image: mysql:latest
+    ports:
+      - "3306:3306"
+    volumes:
+      - todolist-mysql-vol:/var/lib/mysql
+    environment:
+      MYSQL_DATABASE: todo_db
+      MYSQL_USER: todolist_admin
+      MYSQL_PASSWORD: todolist_admin
+      MYSQL_ROOT_PASSWORD: todolist_pw
+    restart: unless-stopped
+  todolist-app:
+    build: ToDoList/
+    ports:
+      - "8080:8080"
+    volumes:
+      - type: bind
+        source: C:\dockermount
+        target: /container/config
+    restart: unless-stopped
+volumes:
+  todolist-mysql-vol:
