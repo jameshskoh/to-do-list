@@ -1,9 +1,4 @@
-DROP SCHEMA IF EXISTS `todo_db`;
-
-CREATE SCHEMA `todo_db`;
-
 USE `todo_db`;
-
 DROP TABLE IF EXISTS `todo`;
 
 CREATE TABLE `todo` (
