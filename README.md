@@ -16,7 +16,7 @@ A REST-based to do list server that uses OAuth2 for authentication.
 * [x] Containerize the system in Docker
 * [x] Support starting the image via Docker Compose: `docker-compose up`
 * [x] Support access to to-do list via `http://host:port/api_path/params`
-* [ ] Support authorization via JWT `curl -H "Authorization: Bearer {JWT token} http://host:port/api_path/params"`
+* [ ] Support authorization via JWT `curl -H "Authorization: Bearer {JWT token}" http://host:port/api_path/params`
 
 
 
