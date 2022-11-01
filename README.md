@@ -68,17 +68,15 @@ A REST-based to do list server that uses OAuth2 for authentication.
 ## Usage
 
 * Tested on Postman
-
 * If you are not logged in
   * You will be redirected to the 3rd party authority automatically
-* All requests requires a cookie with a valid `JSESSIONID`
+* All requests require a cookie with a valid `JSESSIONID`
 
 
 
 ### Home
 
 * Endpoint `GET /`
-
 * Shows your account details from the authority
 
 ```json
@@ -96,8 +94,7 @@ A REST-based to do list server that uses OAuth2 for authentication.
 ### List All Your To-do
 
 * Endpoint `GET /todo`
-
-* Returns `200 OK` and a list of to-dos
+* Returns `200 OK` and a list of your to-dos
 
 ```json
 [
@@ -121,7 +118,6 @@ A REST-based to do list server that uses OAuth2 for authentication.
 ### Create New To-do
 
 * Endpoint `POST /todo`
-
 * Body: your to-do label
 
 ```json
@@ -181,9 +177,7 @@ A REST-based to do list server that uses OAuth2 for authentication.
 ### Secret Store Directory, `secret-store`
 
 * Set up a directory to store secrets
-
   * Make sure Docker has access to the directory
-
   * E.g. `C:\dockermount`
 
 
@@ -273,9 +267,7 @@ logging.level.org.springframework.web: DEBUG
 ```
 
 * Retrieve `client-id` and `client-secret` from the 3rd party authority
-
 * Based on your chosen authority, change the content under `spring.security.oauth2.client.registration`, then replace `client-id` and `client-secret`
-
   * E.g. GitHub
     ```yml
     ...
@@ -297,7 +289,6 @@ logging.level.org.springframework.web: DEBUG
     ```
 
 * Optional
-
   * Replace `spring.datasource.password`
 
 
@@ -314,7 +305,8 @@ logging.level.org.springframework.web: DEBUG
    * todolist-app will throw exception on first run, ignore it
 5. Execute `MySQL/01-createtable.sql` using `todolist_admin` user
 6. Run `docker-compose stop` or press `Ctrl+C` to stop the containers
-7. Run `docker-compose start`
+7. Restart by running `docker-compose start`
+   * todolist-app should work properly after this
 
 
 
